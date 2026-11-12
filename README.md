@@ -3,9 +3,9 @@
 https://colab.research.google.com/github/ClarenceBallensky/MLP-vs-GCN-ids/blob/main/MLP_vs_GCN_Intrustion_Detection.ipynb
 
 ### Rebuilding the sample (optional)
-Since the full dataset is very large (~9.8 GB, zipped), I am only training on a small sample. The notebook [`Build_Sample.ipynb`](Build_Bample.ipynb) shows how I created this sample: the notebook downloads the full dataset (~9.8 GB), randomly keeps 10% of each daily file, then randomly reduces the combined result to about 300,000 rows (seed 42). 
+Since the full dataset is very large (~9.8 GB, zipped), I am only training on a small sample. The notebook [`Build_Sample.ipynb`](Build_Sample.ipynb) shows how I created this sample: the notebook downloads the full dataset (~9.8 GB), randomly keeps 10% of each daily file, then randomly reduces the combined result to about 300,000 rows (seed 42). 
 
-You do not need to rebuild the data sample to run the project; the main notebook already downloads a ready-made sample (`ids_sample.parquet`) from this repository's v1 release and checks its SHA-256 hash, so everyone trains on identical data. [`Build_Sample.ipynb`](Build_Bample.ipynb) is only included in this repository for the sake of reproducibility and transparency. If you rebuild it, the file may differ slightly from the v1 release because of software versions, so treat the v1 release as the official copy.
+You do not need to rebuild the data sample to run the project; the main notebook already downloads a ready-made sample (`ids_sample.parquet`) from this repository's v1 release and checks its SHA-256 hash, so everyone trains on identical data. [`Build_Sample.ipynb`](Build_Sample.ipynb) is only included in this repository for the sake of reproducibility and transparency. If you rebuild it, the file may differ slightly from the v1 release because of software versions, so treat the v1 release as the official copy.
 
 ## Dataset
 
