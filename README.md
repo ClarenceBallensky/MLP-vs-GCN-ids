@@ -1,6 +1,6 @@
 # MLP-vs-GCN-ids
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ClarenceBallensky/MLP-vs-GCN-ids/blob/main/MLP_vs_GCN_Intrustion_Detection.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ClarenceBallensky/MLP-vs-GCN-ids/blob/main/MLP_vs_GCN_Intrusion_Detection.ipynb)
 
 ## Overview
 **Research Question:** Can a Graph Convolutional Network (GCN) improve network intrusion detection by leveraging relationships between network flows, compared with a Multilayer Perceptron (MLP), which treats each flow independently?
@@ -44,14 +44,14 @@ Test set: 45,001 flows, 6.05% of which are attacks. Precision, recall, and F1 ar
 - **Random split:** near-identical attack flows from the same burst appear in both training and test sets, so the scores measure recognizing known attack patterns, not detecting new attack types. A time-based split was not used because most attack types occur on only one or two days.
 - **The graph partly encodes attacker identity:** each attack type comes from only 1 to 10 source IPs, so grouping flows by source IP also groups them by label. This makes the task easier than real-world traffic.
 - **Possible shortcut features:** features such as `Dst Port` may let both models rely on patterns tied to how this dataset's attacks were generated.
-- **Different training procedures:** the MLP trained in mini-batches and the GCN trained full-batch, with different learning rates and epoch counts. Neither model was extensively tuned.
+- **Different training procedures:** the MLP trained in mini-batches and the GCN trained full-batch, with different learning rates and epoch counts. Neither model was extensively tuned, and the GCN's best validation epoch was 197 of 200, so it may not have fully converged.
 - **Scope:** one random seed, one 300,001-flow sample, and binary classification only. Individual attack types, several with 20 or fewer flows, were not evaluated separately.
 
 ## Running the Project
 Open the notebook in Colab with the link above and run all cells from the top. The notebook installs `torch_geometric`, downloads the sample, and verifies its hash. A GPU is optional: the results above were produced on a CPU runtime. Training is seeded (42), but a GPU runtime may give slightly different results in the last decimal places. If the Colab runtime times out, re-run from the top.
 
 Repository contents:
-- `MLP_vs_GCN_Intrustion_Detection.ipynb`: the main notebook (data checks, split, MLP, graph, GCN, comparison).
+- `MLP_vs_GCN_Intrusion_Detection.ipynb`: the main notebook (data checks, split, MLP, graph, GCN, comparison).
 - `Build_Sample.ipynb`: how the data sample was created.
 - `results.png`: the comparison figure shown above.
 
